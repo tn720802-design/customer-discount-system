@@ -1,11 +1,11 @@
-def calculate_discount(previous_total_purchase):
+def calculate_discount(total_purchase_this_year):
     """
-    PHIÊN BẢN CÓ BUG: chỉ kiểm tra tổng mua trước đó,
-    KHÔNG cộng dồn đơn hàng hiện tại vào tổng.
+    Tính tỷ lệ giảm giá dựa trên tổng giá trị mua hàng trong năm.
+    Khách hàng thân thiết (tổng >= 50 triệu) được giảm 10%.
     """
     LOYALTY_THRESHOLD = 50_000_000
     DISCOUNT_RATE = 0.1
 
-    if previous_total_purchase >= LOYALTY_THRESHOLD:
+    if total_purchase_this_year >= LOYALTY_THRESHOLD:
         return DISCOUNT_RATE
     return 0

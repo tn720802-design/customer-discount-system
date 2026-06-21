@@ -2,7 +2,7 @@ from discount import calculate_discount
 
 def run_test_case(name, previous_total, new_order):
     total_after_order = previous_total + new_order
-    discount_rate = calculate_discount(previous_total)
+    discount_rate = calculate_discount(total_after_order)
     discount_amount = new_order * discount_rate
     final_price = new_order - discount_amount
 
